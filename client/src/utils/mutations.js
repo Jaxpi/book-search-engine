@@ -27,22 +27,21 @@ export const ADD_USER = gql`
 //NEEDS WORK
 export const SAVE_BOOK = gql`
   mutation saveBook($thoughtText: String!, $thoughtAuthor: String!) {
-    addThought(thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor) {
+    saveBook(thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-      }
+      description
+      bookId
+      image
+      link
+      title
+      authors
     }
   }
 `;
 
 //NEEDS WORK
 export const REMOVE_BOOK = gql`
-  mutation addComment(
+  mutation removeBook(
     $thoughtId: ID!
     $commentText: String!
     $commentAuthor: String!
