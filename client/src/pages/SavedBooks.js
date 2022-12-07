@@ -10,7 +10,7 @@ import { useQuery, useMutation } from '@apollo/client';
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
   const userData = data?.me || {};
-  const [removeBook] = useMutation(REMOVE_BOOK);
+  const [removeBook, {error} ] = useMutation(REMOVE_BOOK);
 
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;

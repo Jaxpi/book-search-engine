@@ -42,12 +42,13 @@ const resolvers = {
         return User.findOneAndUpdate(
           { _id: context.user._id },
           {
-            $addToSet: { savedBooks: data },
+            $push: { savedBooks: data },
           },
           {
             new: true,
           }
-        );
+        )
+        .populate("books");
       }
       throw new AuthenticationError("Log In to Continue");
     },
