@@ -1,6 +1,6 @@
 # Book Search Engine
 
-https://jaxpi.github.io/DEPLOYEDLINK/
+https://jaxpi-book-search-engine.herokuapp.com/
 <br><img src="./client/public/mainscreenshot.jpg" alt="main screen shot" style="width:400px; height auto;">
 
 
