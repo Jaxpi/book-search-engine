@@ -68,6 +68,16 @@ const SearchBooks = () => {
       return false;
     }
 
+    // try {
+    //   const { data } = await saveBook({
+    //     variables: { newBook: { ...bookToSave } },
+    //   });
+
+    //   setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+    // } catch (err) {
+    //   console.error(err);
+    // }
+
     try {
       const response = await saveBook(bookToSave, token);
 

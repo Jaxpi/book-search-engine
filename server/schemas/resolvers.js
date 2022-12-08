@@ -48,7 +48,6 @@ const resolvers = {
             new: true,
           }
         )
-        .populate("books");
       }
       throw new AuthenticationError("Log In to Continue");
     },

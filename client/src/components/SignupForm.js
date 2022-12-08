@@ -108,3 +108,5 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+
+// Your utils/auth.js is being called for user sign up, but you haven’t finished that yet. check the authMiddleware function. 
