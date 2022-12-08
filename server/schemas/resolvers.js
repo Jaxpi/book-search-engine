@@ -14,7 +14,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (_parent, { username, email, password }) => {
+    addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
@@ -37,17 +37,21 @@ const resolvers = {
       return { token, user };
     },
 
-    saveBook: async (parent, { data }, context) => {
+    saveBook: async (parent, { newBook }, context) => {
       if (context.user) {
-        return User.findOneAndUpdate(
-          { _id: context.user._id },
-          {
-            $push: { savedBooks: data },
-          },
-          {
-            new: true,
-          }
-        )
+        try {
+          return User.findOneAndUpdate(
+            { _id: context.user._id },
+            {
+              $push: { savedBooks: newBook },
+            },
+            {
+              new: true,
+            }
+          )
+        } catch(error) {
+          console.log(error)
+        }
       }
       throw new AuthenticationError("Log In to Continue");
     },
