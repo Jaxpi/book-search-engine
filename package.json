@@ -1,6 +1,7 @@
 {
   "name": "googlebooks-app",
   "version": "1.0.0",
+  "hpmepage": "https://jaxpi-book-search-engine.herokuapp.com/",
   "engines": {
     "node": "16.18.0"
   },
